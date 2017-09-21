@@ -1,24 +1,88 @@
-.App {
-  text-align: center;
+@import "../node_modules/bulma/bulma.sass";
+
+// custom starts here: 
+html{
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+body{
+  height: 100vh;
+  width: 100vw;
+}
+.steam-input{
+  &:focus{
+    border-color: grey;
+    border-size: 2px;
+  }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.hero-component{
+  width: 100vw;
+  height: 100%;
+}
+.container{
+  height: 100% !important;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+#root{
+  height: 100%;
+  width: 100%;
+}
+.search-container{
+  align-self: center;
+  width: 80vw;
+  & input{
+    padding: 20px;
+    
+  }
+}
+.content-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.App{
+    height: 100%;
+    width: 100%;
+}  
+.steam-logo{
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  box-sizing: border-box;
   padding: 20px;
-  color: white;
+  opacity: 0.75;
+}
+.steam-logo-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  
+background-image: radial-gradient(circle, #051937, #131a39, #1d1a3a, #261b3a, #2e1b3a);
+  // background-color:rgba(120,120,120, 1);
+  // filter: blur(2px);
+  
 }
 
-.App-intro {
-  font-size: large;
+.show-button{    
+  width: 35px;
+  cursor: pointer;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(120,120,120, 0.75);
+  // color: rgba(120,120,120, 0.75);
+  // border-radius: 50px;
+  &:hover{
+    border: 2px solid rgba(120,120,120, 1);
+    color: rgba(120,120,120, 1);
+    transform: translateY(-1px);
+  }
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
