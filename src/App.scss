@@ -29,6 +29,17 @@ body{
   height: 100%;
   width: 100%;
 }
+.game-container{
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+img{
+  height: auto;
+  width: auto;
+  display: block;
+}
 .search-container{
   align-self: center;
   width: 80vw;
@@ -36,6 +47,14 @@ body{
     padding: 20px;
     
   }
+}
+.game-name{
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 4px 8px;
+  max-width: 75%;
+  max-height: 50%;
+  
 }
 .content-container{
   height: 100%;
@@ -62,7 +81,7 @@ body{
   height: 100%;
   position: absolute;
   top: 0;
-  
+  z-index: -1;
 background-image: radial-gradient(circle, #051937, #131a39, #1d1a3a, #261b3a, #2e1b3a);
   // background-color:rgba(120,120,120, 1);
   // filter: blur(2px);

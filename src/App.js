@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import './App.css';
 import HeroBackground from './background.js';
 import SteamInput from './components/searchBar.js';
+import GameDisplay from './components/displayResults.js';
 import { GetGame } from './scripts/getGame.js';
 import 'bulma';
 
@@ -14,7 +15,9 @@ class App extends Component {
     super(props)
     this.state = {
       value: '',
-      searching: false
+      searching: false,
+      results: false,
+      gameData: null
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -27,36 +30,30 @@ class App extends Component {
   }
   handleSearch(e) {
     this.setState({ searching: true });
-    setTimeout(function() {
-      this.setState({ searching: false })
-    }.bind(this), 1200)
-
-
-    if (isNaN(this.state.value)) {
-      if (this.state.value.lastIndexOf('/') !== -1) {
-        url = this.state.value.substring(this.state.value.lastIndexOf('/') + 1);
+    // setTimeout(function() {
+    //   this.setState({ searching: false })
+    // }.bind(this), 1200)
+      const regex = /\d{10,20}/g;
+      url = this.state.value.match(regex);
+    
         GetGame(url, function(res, err) {
-          console.log('is nan', res)
-        })
-      }
-    }else {
-      url = this.state.value;
-      GetGame(url, function(res, err) {
-        console.log('is a number', res)
-      })
-    }
-
-    console.log(url);
+            this.setState({ searching: false,
+            results: true})
+            console.log(res.data);
+            this.setState({gameData: res.data});
+        }.bind(this))
 
   }
   render() {
     return (
       <div className="App">
-      <HeroBackground/>
+
       <div className="content-container">
-          { !this.state.searching ? <SteamInput handleSearch={this.handleSearch} val={this.state.value} handleInput={this.handleInput} /> : null}
-      </div>
       
+          { !this.state.searching && !this.state.results ? <SteamInput handleSearch={this.handleSearch} val={this.state.value} handleInput={this.handleInput} /> : null}
+          { this.state.results && this.state.gameData ? <GameDisplay data={this.state.gameData}/> : null }
+      </div>
+            <HeroBackground/>
       </div>
     );
   }

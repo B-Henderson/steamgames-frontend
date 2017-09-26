@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = 'https://steam-random-blazei.c9users.io';
+const api = 'https://steam-random.herokuapp.com/';
 
 export const GetGame = (steamid, callback) => {
     console.log('steamid', steamid);
