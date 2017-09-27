@@ -1,16 +1,22 @@
 import axios from 'axios';
 
+const d = {"data":{"gameId":102840,"gameName":"Shank 2","detailedDescription":"Shank 2","short_description":"Lorem ipsum dolor sit amet, an alii commodo consequuntur mei, aeque mundi est cu. Iuvaret contentiones in quo, homero nemore consequuntur pri et. Vel ex aliquip intellegebat, usu ut cetero fierent, sea soluta necessitatibus ei. Lobortis maluisset referrentur ad ius.","reviews":"","header":"http://cdn.akamai.steamstatic.com/steam/apps/102840/header.jpg?t=1477409262","website":"http://kleientertainment.com/games/shank-2/","genres":[{"id":"1","description":"Action"},{"id":"25","description":"Adventure"},{"id":"23","description":"Indie"}],"screenshots":[{"id":0,"path_thumbnail":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_c01f13c8de4780dee9c55851500a8ce8383018d4.600x338.jpg?t=1477409262","path_full":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_c01f13c8de4780dee9c55851500a8ce8383018d4.1920x1080.jpg?t=1477409262"},{"id":1,"path_thumbnail":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_fa0420f4d10ce13a7f3cb8b275c7d18002fbf92a.600x338.jpg?t=1477409262","path_full":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_fa0420f4d10ce13a7f3cb8b275c7d18002fbf92a.1920x1080.jpg?t=1477409262"},{"id":2,"path_thumbnail":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_a586d4e5997c35cbd8912ef65efe032ea9490025.600x338.jpg?t=1477409262","path_full":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_a586d4e5997c35cbd8912ef65efe032ea9490025.1920x1080.jpg?t=1477409262"},{"id":3,"path_thumbnail":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_585245d8d7ee80397ba32cfac0cba00721b0f007.600x338.jpg?t=1477409262","path_full":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_585245d8d7ee80397ba32cfac0cba00721b0f007.1920x1080.jpg?t=1477409262"},{"id":4,"path_thumbnail":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_0a8485c53860668a0d93f793727802ad2ad553f0.600x338.jpg?t=1477409262","path_full":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_0a8485c53860668a0d93f793727802ad2ad553f0.1920x1080.jpg?t=1477409262"},{"id":5,"path_thumbnail":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_350a75cb1c94d993d1462a06788e4404452faf2a.600x338.jpg?t=1477409262","path_full":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_350a75cb1c94d993d1462a06788e4404452faf2a.1920x1080.jpg?t=1477409262"},{"id":6,"path_thumbnail":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_152a1f2a5a6ad419c77d8420685d96c8ca16e357.600x338.jpg?t=1477409262","path_full":"http://cdn.akamai.steamstatic.com/steam/apps/102840/ss_152a1f2a5a6ad419c77d8420685d96c8ca16e357.1920x1080.jpg?t=1477409262"}],"youtubeVideos":[{"videoId":"pq_ksbgN0D0","title":"Shank 2 ~ All Bosses","channelTitle":"That Fella Johnny","thumbnails":{"default":{"url":"https://i.ytimg.com/vi/pq_ksbgN0D0/default.jpg","width":120,"height":90},"medium":{"url":"https://i.ytimg.com/vi/pq_ksbgN0D0/mqdefault.jpg","width":320,"height":180},"high":{"url":"https://i.ytimg.com/vi/pq_ksbgN0D0/hqdefault.jpg","width":480,"height":360}},"videoDescription":"All bosses from Shank 2 including their linked cutscenes. Sorry about the low quality for the Obeng fight. I don't think my capture software likes the rain."},{"videoId":"M-capVT0LXE","title":"Shank 2 Walkthrough with Commentary Part 1 - Gameplay","channelTitle":"SSoHPKC","thumbnails":{"default":{"url":"https://i.ytimg.com/vi/M-capVT0LXE/default.jpg","width":120,"height":90},"medium":{"url":"https://i.ytimg.com/vi/M-capVT0LXE/mqdefault.jpg","width":320,"height":180},"high":{"url":"https://i.ytimg.com/vi/M-capVT0LXE/hqdefault.jpg","width":480,"height":360}},"videoDescription":"If you liked the video please remember to leave a rating, helps me out a lot :D Just finished the first one not too long ago Connections TWITTER ..."}],"streams":[]},"status":200,"statusText":"OK","headers":{"content-type":"application/json; charset=utf-8"},"config":{"transformRequest":{},"transformResponse":{},"timeout":0,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN","maxContentLength":-1,"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json;charset=utf-8"},"method":"post","url":"https://steam-random.herokuapp.com/","data":"{\"steamid\":[\"76561198011120099\"]}"},"request":{}};
+
 const api = 'https://steam-random.herokuapp.com/';
 
 export const GetGame = (steamid, callback) => {
-    console.log('steamid', steamid);
-    axios.post(api, {
-        'steamid': steamid
-    })
-    .then(function(res){
-        callback(res);
-    })
-    .catch(function(err){
-      callback(err);  
-    })
+    // console.log('steamid', steamid);
+    // axios.post(api, {
+    //     'steamid': steamid
+    // })
+    // .then(function(res){
+    //     console.log(JSON.stringify(res));
+    //     callback(res);
+    // })
+    // .catch(function(err){
+    //   callback(err);  
+    // })
+    callback(d);
 };
+
+

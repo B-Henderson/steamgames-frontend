@@ -53,7 +53,7 @@ class App extends Component {
           { !this.state.searching && !this.state.results ? <SteamInput handleSearch={this.handleSearch} val={this.state.value} handleInput={this.handleInput} /> : null}
           { this.state.results && this.state.gameData ? <GameDisplay data={this.state.gameData}/> : null }
       </div>
-            <HeroBackground/>
+      <HeroBackground/>
       </div>
     );
   }

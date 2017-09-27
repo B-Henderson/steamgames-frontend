@@ -6175,15 +6175,17 @@ body {
   width: 100%; }
 
 .game-container {
-  align-self: center;
+  max-width: 80vw;
+  align-self: flex-start;
+  flex-wrap: wrap;
   display: flex;
-  flex-direction: column;
-  justify-content: center; }
+  flex-direction: row; }
 
-img {
-  height: auto;
-  width: auto;
-  display: block; }
+.game-banner {
+  flex: 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .search-container {
   align-self: center;
@@ -6191,18 +6193,12 @@ img {
   .search-container input {
     padding: 20px; }
 
-.game-name {
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 4px 8px;
-  max-width: 75%;
-  max-height: 50%; }
-
 .content-container {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3); }
 
 .App {
   height: 100%;
@@ -6221,10 +6217,25 @@ img {
 .steam-logo-container {
   width: 100%;
   height: 100%;
+  align-self: center;
   position: absolute;
   top: 0;
   z-index: -1;
   background-image: radial-gradient(circle, #051937, #131a39, #1d1a3a, #261b3a, #2e1b3a); }
+
+.genre-container {
+  padding: 20px;
+  flex: 1;
+  color: #1F5272; }
+  .genre-container li, .genre-container h4 {
+    display: inline-block;
+    margin: 5px;
+    text-align: center; }
+  .genre-container li {
+    background-color: #FBF7FF;
+    border: 1px solid #1d170d;
+    padding: 10px;
+    min-width: 40px; }
 
 .show-button {
   width: 35px;
